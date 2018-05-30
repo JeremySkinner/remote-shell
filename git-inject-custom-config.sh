@@ -63,6 +63,5 @@ git() {
         if [ "${paths}" = "" ]; then
             eval "${GIT_PROFILES_GIT_COMMAND} config --global --remove-section include"
         fi
-    else 
     fi
 }

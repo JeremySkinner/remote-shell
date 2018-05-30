@@ -1,9 +1,11 @@
 if [[ ! -d "${HOME}/.remote-shell" ]]; then
     git clone https://github.com/JeremySkinner/remote-shell.git ~/.remote-shell
 else
+    echo 'Updating remote shell.'
     # Make sure we're running the latest
-    git --git-dir "~/.remote-shell/.git" pull origin master
+    git --git-dir ~/.remote-shell/.git pull origin master
 fi
+
 # Prompt for name. 
 name=
 while [[ ! $name ]]; do

@@ -1,0 +1,13 @@
+export GIT_PROMPT_ShowStatusWhenZero=0
+export GIT_PROMPT_BeforeStatus="on "
+export GIT_PROMPT_AfterStatus=""
+export GIT_PROMPT_AfterStatusColor="Yellow"
+export GIT_PROMPT_DelimStatus=" working"
+export GIT_PROMPT_BeforeIndex=" index"
+export GIT_PROMPT_BeforeIndexColor="DarkGray"
+export GIT_PROMPT_DelimStatusColor="DarkGray"
+export GIT_PROMPT_IndexColor="Yellow"
+export GIT_PROMPT_DefaultPromptSuffix="
+$ "
+export GIT_PROMPT_DefaultPromptPrefix="{DarkBlue}\u{Reset} at {DarkRed}\h {Reset}in {DarkGreen}\W{Reset}"
+export GIT_PROMPT_BranchColor="DarkBlue"

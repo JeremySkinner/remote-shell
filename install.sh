@@ -4,7 +4,8 @@ else
     echo 'Updating remote shell.'
     # Make sure we're running the latest
     git --git-dir ~/.remote-shell/.git --work-tree ~/.remote-shell pull origin master
-    git --git-dir ~/.remote-shell/.git --work-tree ~/.remote-shell submodule update --remote
+    # Submodule update doesn't support --work-tree, so cd in there using a subshell
+    (cd ~/.remote-shell && git submodule update --remote)
 fi
 
 # Prompt for name. 

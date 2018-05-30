@@ -5,9 +5,19 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Adds support for per-user git config files.
 source "$DIR/git-inject-custom-config.sh"
 
+#"\[\033]0;\w\007\]\n${CYAN}\u ${D}at ${ORANGE}\h ${D}in ${GREEN}\w ${D}"
+
+#"\[\033]0;\w\007\]\n${CYAN}\u ${D}at ${ORANGE}\h ${D}in ${GREEN}\w ${D}"
+  
+
 # Adds support for git prompt.
-export PROMPT_COMMAND=gitPrompt
+export PROMPT_COMMAND='gitPrompt'
 
 gitPrompt () {
-    php "$DIR/phpish-git/git-prompt.php"
+    local prompt=`php "${DIR}/phpish-git/git-prompt.php"`
+    #echo $prompt
+    export PS1=$prompt
 }
+
+
+#'__posh_git_ps1 "\[\033]0;\w\007\]\n${CYAN}\u ${D}at ${ORANGE}\h ${D}in ${GREEN}\w ${D}" "\n\\\$ "'

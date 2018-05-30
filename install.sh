@@ -1,9 +1,10 @@
 if [[ ! -d "${HOME}/.remote-shell" ]]; then
-    git clone https://github.com/JeremySkinner/remote-shell.git ~/.remote-shell
+    git clone --recurse-submodules https://github.com/JeremySkinner/remote-shell.git ~/.remote-shell
 else
     echo 'Updating remote shell.'
     # Make sure we're running the latest
     git --git-dir ~/.remote-shell/.git --work-tree ~/.remote-shell pull origin master
+    git --git-dir ~/.remote-shell/.git --work-tree ~/.remote-shell submodule update --remote
 fi
 
 # Prompt for name. 

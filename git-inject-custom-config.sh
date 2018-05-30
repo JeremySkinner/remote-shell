@@ -58,7 +58,7 @@ git() {
         eval "${GIT_PROFILES_GIT_COMMAND} config --global --unset include.path ${gitprofile2}"
     fi
 
-    if [ "${added_path1}" = true -or "${added_path2}" = true ]; then 
+    if [[ "${added_path1}" -eq true ]] || [[ "${added_path2}" -eq true ]]; then 
         local paths=$("${GIT_PROFILES_GIT_COMMAND}" config --global --get-all include.path)
         if [ "${paths}" = "" ]; then
             eval "${GIT_PROFILES_GIT_COMMAND} config --global --remove-section include"

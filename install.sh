@@ -3,7 +3,7 @@ if [[ ! -d "${HOME}/.remote-shell" ]]; then
 else
     echo 'Updating remote shell.'
     # Make sure we're running the latest
-    git --git-dir ~/.remote-shell/.git pull origin master
+    git --git-dir ~/.remote-shell/.git --work-tree ~/.remote-shell pull origin master
 fi
 
 # Prompt for name. 
@@ -34,7 +34,7 @@ fi
 # Create git customizations if they don't exist. 
 if [[ ! -f "${HOME}/.gitconfig_$name" ]]; then 
     echo "Creating .gitconfig_$name"
-    echo > "${HOME}/.gitconfig_$name"
+    echo "# Place your custom git config in here" > "${HOME}/.gitconfig_$name"
 fi
 
 # Ask the user for their IP.

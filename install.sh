@@ -24,10 +24,17 @@ if [[ ! -f "${HOME}/.bashrc_$name" ]]; then
     template_custom="${HOME}/.remote-shell/bashrc_$name.sh"
 
     echo "Creating .bashrc_$name"
-    echo -e "source '\"${template_common}\"'" >> "${HOME}/.bashrc_$name"
-    echo -e "[[ -f \"${template_custom}\" ]] && source \"'${template_custom}\"'" >> "${HOME}/.bashrc_$name"
+    echo -e "source \"${template_common}\"" >> "${HOME}/.bashrc_$name"
+    echo -e "[[ -f \"${template_custom}\" ]] && source \"${template_custom}\"" >> "${HOME}/.bashrc_$name"
+    echo -e "export GIT_CUSTOM_CONFIG='~/.gitconfig_$name'" >> "${HOME}/.bashrc_$name"
 else
     echo ".bashrc_$name already exists. Skipping."    
+fi
+
+# Create git customizations if they don't exist. 
+if [[ ! -f "${HOME}/.gitconfig_$name" ]]; then 
+    echo "Creating .gitconfig_$name"
+    echo > "${HOME}/.gitconfig_$name"
 fi
 
 # Ask the user for their IP.

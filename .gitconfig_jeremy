@@ -1,0 +1,18 @@
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+
+[user]
+	name = Jeremy Skinner
+	email = jeremy@jeremyskinner.co.uk
+
+[alias]
+	cia = !git add -A && git commit
+  glog = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr) %Creset' --abbrev-commit --branches
+  l = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr) %Creset' --abbrev-commit --branches
+  lg = log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(cyan)%an%Creset' --abbrev-commit
+  stat = status
+  st = status
+  ci = commit
+  co = checkout

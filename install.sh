@@ -24,9 +24,14 @@ if [[ ! -f "${HOME}/.bashrc_$name" ]]; then
     template_custom="${HOME}/.remote-shell/bashrc_$name.sh"
 
     echo "Creating .bashrc_$name"
-    echo -e "source \"${template_common}\"" >> "${HOME}/.bashrc_$name"
-    echo -e "[[ -f \"${template_custom}\" ]] && source \"${template_custom}\"" >> "${HOME}/.bashrc_$name"
-    echo -e "export GIT_CUSTOM_CONFIG='~/.gitconfig_$name'" >> "${HOME}/.bashrc_$name"
+    echo -e "# Update these variables to point to your custom git config
+export GIT_CUSTOM_CONFIG1='~/.gitconfig_$name'
+export GIT_CUSTOM_CONFIG2='~/.remote-shell/.gitconfig_$name'
+
+source \"${template_common}\"
+[[ -f \"${template_custom}\" ]] && source \"${template_custom}\"
+
+" >> "${HOME}/.bashrc_$name"
 else
     echo ".bashrc_$name already exists. Skipping."    
 fi
@@ -55,7 +60,7 @@ if [[ $ip ]]; then
         echo 'This IP has already been loaded.'
     else
         echo "if [ \"\${SSH_CLIENT%% *}\" == \"$ip\" ]; then
-source ~/.bashrc_$name
+  source ~/.bashrc_$name
 fi
 
 " >> ~/.bashrc

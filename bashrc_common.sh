@@ -15,7 +15,6 @@ source "$DIR/phpish-git/git-prompt.sh"
 # For a complete list see 
 # https://github.com/JeremySkinner/remote-shell/wiki/Environment-Variables
 export GIT_PROMPT_ShowStatusWhenZero=0
-# There are many environm
 
 # Loads the git prompt
 export PROMPT_COMMAND='git-prompt'

@@ -70,4 +70,4 @@ fi
     fi
 fi
 
-source "~/.bashrc_$name"
+source "${HOME}/.bashrc_$name"

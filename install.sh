@@ -61,10 +61,13 @@ if [[ $ip ]]; then
     if grep -q $ip ~/.bashrc; then 
         echo 'This IP has already been loaded.'
     else
-        echo "if [ \"\${SSH_CLIENT%% *}\" == \"$ip\" ]; then
+        echo "
+if [ \"\${SSH_CLIENT%% *}\" == \"$ip\" ]; then
   source ~/.bashrc_$name
 fi
 
 " >> ~/.bashrc
     fi
 fi
+
+source "~/.bashrc_$name"

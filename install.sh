@@ -22,8 +22,8 @@ done
 # The default template is to source the common profile
 # as well as any custom profile that's checked in.
 if [[ ! -f "${HOME}/.bashrc_$name" ]]; then
-    template_common="${HOME}/.remote-shell/bashrc_common.sh"
-    template_custom="${HOME}/.remote-shell/bashrc_$name.sh"
+    template_common="${HOME}/.remote-shell/.bashrc_common"
+    template_custom="${HOME}/.remote-shell/.bashrc_$name"
 
     echo "Creating .bashrc_$name"
     echo -e "# Update these variables to point to your custom git config

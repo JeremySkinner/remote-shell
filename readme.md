@@ -48,6 +48,8 @@ The git prompt displays git information prompt information in your prompt:
 
 This is done by the [phpish-git](https://github.com/jeremyskinner/phpish-git) project, which is a PHP-based port of [posh-git](https://github.com/dahlbyk/posh-git).
 
+A list of what all the symbols mean is available [on the project page](https://github.com/JeremySkinner/phpish-git).
+
 The prompt is fully customizable using a huge number of settings. For example, I like to use a verbose multi-line prompt:
 
 <img width="1022" alt="screen shot 2018-05-31 at 18 14 46" src="https://user-images.githubusercontent.com/90130/40796931-84da0a26-64fe-11e8-9953-9e6f9f51fc00.png">

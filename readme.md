@@ -15,12 +15,12 @@ The installer will install to ~/.remote-shell
 The installer will prompt you for your unique name and create a bashrc file for you. For example, if you enter the name "jeremy" when prompted, the installer will create the file ~/.bashrc_jeremy 
 
 By default, this will load the following files:
-- ~/.remote-shell/bashrc_common.sh
-- ~/.remote-shell/bashrc_[name].sh (eg bashrc_jeremy.sh)
+- ~/.remote-shell/.bashrc_common
+- ~/.remote-shell/.bashrc_[name] (eg .bashrc_jeremy)
 
-The "Common" bashrc (`~/.remote-shell/bashrc_common.sh`) is shared by all users and loads in the git prompt scripts.
+The "Common" bashrc (`~/.remote-shell/.bashrc_common`) is shared by all users and loads in the git prompt scripts.
 
-The file `~/.remote-shell/bashrc_[name].sh` is your own bashrc that is common to all machines. This should be checked into this repository. When you edit it, you should check it back in and push it to the repo.
+The file `~/.remote-shell/.bashrc_[name]` is your own bashrc that is common to all machines. When you edit it, you should check it back in and push it to this repo.
 
 The file `~/.bashrc_[name]` is your own bashrc that is unique to this login/server.
 
@@ -42,8 +42,23 @@ To add your customizations, modify the `~/.gitconfig_[name]` file that is genera
 
 # Git Prompt
 
-TODO 
+The git prompt displays git information prompt information in your prompt: 
+
+<img width="1004" alt="screen shot 2018-05-31 at 18 10 39" src="https://user-images.githubusercontent.com/90130/40796788-1df3980e-64fe-11e8-8aca-cb5ba83c40ef.png"> 
+
+This is done by the [phpish-git](https://github.com/jeremyskinner/phpish-git) project, which is a PHP-based port of [posh-git](https://github.com/dahlbyk/posh-git).
+
+The prompt is fully customizable using a huge number of settings. For example, I like to use a verbose multi-line prompt:
+
+<img width="1022" alt="screen shot 2018-05-31 at 18 14 46" src="https://user-images.githubusercontent.com/90130/40796931-84da0a26-64fe-11e8-9953-9e6f9f51fc00.png">
+
+More details on how to customize this can be found on the [phpish-git](https://github.com/JeremySkinner/phpish-git) project page.
+
 
 # Git tab expansion
 
-TODO
+Also part of the phpish-git project, tab expansion is available for git commands. 
+
+# Built-in drush launcher
+
+Coming soon.

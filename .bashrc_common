@@ -14,9 +14,9 @@ source "$DIR/phpish-git/git-prompt.sh"
 source "$DIR/phpish-git/git-tab-expansion.sh"
 
 # Set bash to cycle through tab expansion options on tab, rather than requiring double tab
-bind "set show-all-if-ambiguous off"
-bind '"\t":menu-complete'
-bind '"\e[Z": menu-complete-backward'
+# bind "set show-all-if-ambiguous off"
+# bind '"\t":menu-complete'
+# bind '"\e[Z": menu-complete-backward'
 
 # Copy this into your own .bashrc_username for case-insensitive completion.
 # bind "set completion-ignore-case on"

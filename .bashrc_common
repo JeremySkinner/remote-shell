@@ -5,10 +5,21 @@
 # ~/.bashrc_username or ~/.remote-shell/bashrc_username.sh
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # Adds support for per-user git config files.
 source "$DIR/git-inject-custom-config.sh"
 # Adds support for the git prompt
 source "$DIR/phpish-git/git-prompt.sh"
+# Adds git tab expansion
+source "$DIR/phpish-git/git-tab-expansion.sh"
+
+# Set bash to cycle through tab expansion options on tab, rather than requiring double tab
+bind "set show-all-if-ambiguous off"
+bind '"\t":menu-complete'
+bind '"\e[Z": menu-complete-backward'
+
+# Copy this into your own .bashrc_username for case-insensitive completion.
+# bind "set completion-ignore-case on"
 
 # Prompt customisations. There are many environment
 # variables you can use to customize the prompt. 

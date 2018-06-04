@@ -29,3 +29,6 @@ export GIT_PROMPT_ShowStatusWhenZero=0
 
 # Loads the git prompt
 export PROMPT_COMMAND='git-prompt'
+
+# Adds support for drush launcher (usable in any dir without an explicit reference to vendor/bin/drush)
+function drush() { php "$DIR/drush.phar" "$@"; }

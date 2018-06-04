@@ -10,6 +10,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$DIR/phpish-git/git-prompt.sh"
 # Adds git tab expansion
 source "$DIR/phpish-git/git-tab-expansion.sh"
+# Add config injection
+source "$DIR/git-inject-custom-config.sh"
 
 # Set bash to cycle through tab expansion options on tab, rather than requiring double tab
 # bind "set show-all-if-ambiguous off"
@@ -27,8 +29,3 @@ export GIT_PROMPT_ShowStatusWhenZero=0
 
 # Loads the git prompt
 export PROMPT_COMMAND='git-prompt'
-
-# Inject custom git include paths.
-# The paths are set in ~/.bashrc_username
-git config --global --add include.path $GIT_CUSTOM_CONFIG1
-git config --global --add include.path $GIT_CUSTOM_CONFIG2

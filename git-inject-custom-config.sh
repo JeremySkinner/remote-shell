@@ -27,7 +27,7 @@ git() {
     fi
 
     # Execute the commands passed into this function
-    command git $@
+    command git "$@"
 
     # Clean up the global [include] section
     if [ "${added_path1}" = true ]; then

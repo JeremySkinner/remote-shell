@@ -44,6 +44,16 @@ if [[ ! -f "${HOME}/.gitconfig_$name" ]]; then
     echo "# Place your custom git config in here" > "${HOME}/.gitconfig_$name"
 fi
 
+# Make sure the git config reset is in place
+if grep -q 'config --global --remove-section include'; then
+    echo 'Git config reset is already in place.'
+else
+    echo "
+git config --global --remove-section include
+
+" >> ~/.bashrc
+fi
+
 # Ask the user for their IP.
 # If provided, inject it into the bashrc along with the call
 # to source the custom bashrc.

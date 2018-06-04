@@ -49,7 +49,7 @@ if grep -q 'git config --global --remove-section include' ~/.bashrc; then
     echo 'Git config reset is already in place.'
 else
     echo "
-git config --global --remove-section include
+git config --global --remove-section include 2> /dev/null
 
 " >> ~/.bashrc
 fi

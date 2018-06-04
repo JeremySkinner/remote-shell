@@ -45,7 +45,7 @@ if [[ ! -f "${HOME}/.gitconfig_$name" ]]; then
 fi
 
 # Make sure the git config reset is in place
-if grep -q 'git config --global --remove-section include'; then
+if grep -q 'git config --global --remove-section include' ~/.bashrc; then
     echo 'Git config reset is already in place.'
 else
     echo "

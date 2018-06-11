@@ -11,3 +11,13 @@ export GIT_PROMPT_DefaultPromptSuffix="
 $ "
 export GIT_PROMPT_DefaultPromptPrefix="\[\033]0;\w\007\]\n{Cyan}\u{Reset} at {Magenta}\h {Reset}in {Green}\W{Reset}"
 export GIT_PROMPT_BranchColor="Cyan"
+
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous off"
+bind '"\t":menu-complete'
+bind '"\e[Z": menu-complete-backward'
+bind 'Escape: unix-line-discard'
+
+alias ls='ls -A --color=auto'
+alias dir=ls
+alias cls=clear

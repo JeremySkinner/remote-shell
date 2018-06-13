@@ -16,7 +16,7 @@ bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous off"
 bind '"\t":menu-complete'
 bind '"\e[Z": menu-complete-backward'
-bind 'Escape: unix-line-discard'
+#bind 'Escape: unix-line-discard'
 
 alias ls='ls -A --color=auto'
 alias dir=ls

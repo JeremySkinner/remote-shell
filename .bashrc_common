@@ -31,4 +31,5 @@ export GIT_PROMPT_ShowStatusWhenZero=0
 export PROMPT_COMMAND='git-prompt'
 
 # Adds support for drush launcher (usable in any dir without an explicit reference to vendor/bin/drush)
-function drush() { php "$DIR/drush.phar" "$@"; }
+function drush() { php "$DIR/Drush.php" "$@"; }
+function drupal() { php "$DIR/DrupalConsole.php" "$@"; }

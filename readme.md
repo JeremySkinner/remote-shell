@@ -61,6 +61,6 @@ More details on how to customize this can be found on the [phpish-git](https://g
 
 Also part of the phpish-git project, tab expansion is available for git commands. 
 
-# Built-in drush launcher
+# Built-in drush and drupal console launchers
 
-Coming soon.
+The `.bashrc_common` defines the `drush` and `drupal` functions. These act as wrappers for the `drush` and `drupal` executables within a Drupal 8 project's `/vendor/` directory. If you are in a subdirectory of the project, invoking `drush` or `drupal` will correctly locate the appropriate executable within the directory structure and execute it.

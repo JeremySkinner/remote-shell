@@ -34,10 +34,10 @@ export PROMPT_COMMAND='git-prompt'
 function drush() {
   root=$(php "$DIR/DrupalFinder.php" root)
   path=$(php "$DIR/DrupalFinder.php" drush)
-  eval "$path --root=$root/web $@"
+  `$path --root=$root/web "$@"`
 }
 function drupal() {
   root=$(php "$DIR/DrupalFinder.php" root)
   path=$(php "$DIR/DrupalFinder.php" drupal-console)
-  eval "$path --root=$root/web $@"
+  eval `$path --root=$root/web "$@"`
 }

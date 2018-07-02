@@ -30,14 +30,23 @@ export GIT_PROMPT_ShowStatusWhenZero=0
 # Loads the git prompt
 export PROMPT_COMMAND='git-prompt'
 
+function quote_args {
+  if [ $# -gt 0 ]; then
+    printf '"%s" ' "$@"; echo "";
+  fi
+}
+
 # Adds support for drush launcher (usable in any dir without an explicit reference to vendor/bin/drush)
 function drush() {
   root=$(php "$DIR/DrupalFinder.php" root)
   path=$(php "$DIR/DrupalFinder.php" drush)
-  `$path --root=$root/web "$@"`
+  params=$(quote_args $@)
+  eval "$path --root=$root/web $params"
 }
+
 function drupal() {
   root=$(php "$DIR/DrupalFinder.php" root)
   path=$(php "$DIR/DrupalFinder.php" drupal-console)
-  eval `$path --root=$root/web "$@"`
+  params=$(quote_args $@)
+  eval "$path --root=$root/web $params"
 }

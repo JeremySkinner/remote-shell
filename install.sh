@@ -11,11 +11,13 @@ fi
 # Prompt for name.
 name=
 while [[ ! $name ]]; do
+    echo ""
     echo "What's your name? This will be used to create your custom profile"
     echo "(eg enter 'jeremy' and '.bashrc_jeremy' will be created')"
     echo "If this file exists it will not be overwritten."
+    echo ""
 
-    read name
+    read -p "Enter your name: " name 
 done
 
 # If the custom bashrc doesn't exist, create it.
@@ -57,10 +59,22 @@ fi
 # Ask the user for their IP.
 # If provided, inject it into the bashrc along with the call
 # to source the custom bashrc.
-echo "Enter your static IP. Leave blank if you don't have one."
-read ip
+
+ip="${SSH_CLIENT%% *}"
+add_ip=0
 
 if [[ $ip ]]; then
+    while true; do
+        read -p "Your IP address is ${ip}. Is this static?" yn
+        case $yn in
+            [Yy]* ) add_ip=1; break;;
+            [Nn]* ) break;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
+fi
+
+if [[ $add_ip -eq 1 ]]; then
     # If ~/.bashrc doesn't exist, create it.
     if [ ! -f "${HOME}/.bashrc" ]; then
         echo 'Creating bashrc.'

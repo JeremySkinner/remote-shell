@@ -63,6 +63,7 @@ fi
 ip="${SSH_CLIENT%% *}"
 add_ip=0
 
+echo ""
 if [[ $ip ]]; then
     while true; do
         read -p "Your IP address is ${ip}. Is this static?" yn

@@ -66,7 +66,7 @@ add_ip=0
 echo ""
 if [[ $ip ]]; then
     while true; do
-        read -p "Your IP address is ${ip}. Is this static?" yn
+        read -p "Your IP address is ${ip}. Is this static? [y/n] " yn
         case $yn in
             [Yy]* ) add_ip=1; break;;
             [Nn]* ) break;;

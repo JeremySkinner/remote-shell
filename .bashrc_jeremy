@@ -9,7 +9,7 @@ export GIT_PROMPT_DelimStatusColor="DarkGray"
 export GIT_PROMPT_IndexColor="Yellow"
 export GIT_PROMPT_DefaultPromptSuffix="
 $ "
-export GIT_PROMPT_DefaultPromptPrefix="\[\033]0;\w\007\]\n{Cyan}\u{Reset} at {Magenta}\h {Reset}in {Green}\W{Reset}"
+export GIT_PROMPT_DefaultPromptPrefix="\[\033]0;\u@\h:\w\007\]\n{Cyan}\u{Reset} at {Magenta}\h {Reset}in {Green}\W{Reset}"
 export GIT_PROMPT_BranchColor="Cyan"
 
 export EDITOR=nano

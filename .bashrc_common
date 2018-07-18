@@ -40,13 +40,13 @@ function quote_args {
 function drush() {
   root=$(php "$DIR/DrupalFinder.php" root)
   path=$(php "$DIR/DrupalFinder.php" drush)
-  params=$(quote_args $@)
+  params=$(quote_args "$@")
   eval "$path --root=$root/web $params"
 }
 
 function drupal() {
   root=$(php "$DIR/DrupalFinder.php" root)
   path=$(php "$DIR/DrupalFinder.php" drupal-console)
-  params=$(quote_args $@)
+  params=$(quote_args "$@")
   eval "$path --root=$root/web $params"
 }

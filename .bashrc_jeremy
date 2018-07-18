@@ -12,6 +12,10 @@ $ "
 export GIT_PROMPT_DefaultPromptPrefix="\[\033]0;\u@\h:\w\007\]\n{Cyan}\u{Reset} at {Magenta}\h {Reset}in {Green}\W{Reset}"
 export GIT_PROMPT_BranchColor="Cyan"
 
+if [ $PROD_SERVER ]; then 
+  export GIT_PROMPT_DefaultPromptPrefix="\[\033]0;\u@\h:\w\007\]\n{Cyan}\u{Reset} at {Red}\h {Reset}in {Green}\W{Reset}"
+fi
+
 export EDITOR=nano
 
 bind "set completion-ignore-case on"

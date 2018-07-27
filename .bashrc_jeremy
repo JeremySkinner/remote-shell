@@ -35,4 +35,8 @@ lso() { ls -l "$@" | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/)*2
 # git for windows, but breaks Windows' native ssh.exe and causes weird editing to happen. 
 # workaroud by setting to xterm-color. https://serverfault.com/questions/329154/ssh-garbling-characters-in-vim-nano-on-remote-server
 # Hopefully this will be fixed one day...
-export TERM=xterm-color
+function nano {
+  export TERM=xterm-color
+  command nano $@
+  export TERM=xterm-256color
+}

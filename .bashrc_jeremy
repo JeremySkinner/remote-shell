@@ -1,19 +1,19 @@
 export GIT_PROMPT_ShowStatusWhenZero=0
-export GIT_PROMPT_BeforeStatus="on "
-export GIT_PROMPT_AfterStatus=""
-export GIT_PROMPT_AfterStatusColor="Yellow"
-export GIT_PROMPT_DelimStatus=" working"
-export GIT_PROMPT_BeforeIndex=" index"
-export GIT_PROMPT_BeforeIndexColor="DarkGray"
-export GIT_PROMPT_DelimStatusColor="DarkGray"
-export GIT_PROMPT_IndexColor="Yellow"
-export GIT_PROMPT_DefaultPromptSuffix="
-$ "
-export GIT_PROMPT_DefaultPromptPrefix="\[\033]0;\u@\h:\w\007\]\n{Cyan}\u{Reset} at {Magenta}\h {Reset}in {Green}\W{Reset}"
+#export GIT_PROMPT_BeforeStatus="on "
+#export GIT_PROMPT_AfterStatus=""
+#export GIT_PROMPT_AfterStatusColor="Yellow"
+#export GIT_PROMPT_DelimStatus=" working"
+#export GIT_PROMPT_BeforeIndex=" index"
+#export GIT_PROMPT_BeforeIndexColor="DarkGray"
+#export GIT_PROMPT_DelimStatusColor="DarkGray"
+#export GIT_PROMPT_IndexColor="Yellow"
+#export GIT_PROMPT_DefaultPromptSuffix="
+#$ "
+export GIT_PROMPT_DefaultPromptPrefix="\[\033]0;\u@\h:\w\007\]\n{Cyan}\u{Reset}@{Magenta}\h {Green}\W{Reset}"
 export GIT_PROMPT_BranchColor="Cyan"
 
 if [ $PROD_SERVER ]; then 
-  export GIT_PROMPT_DefaultPromptPrefix="\[\033]0;\u@\h:\w\007\]\n{Cyan}\u{Reset} at {Red}\h {Reset}in {Green}\W{Reset}"
+  export GIT_PROMPT_DefaultPromptPrefix="\[\033]0;\u@\h:\w\007\]\n{Cyan}\u{Reset}@{Red}\h {Green}\W{Reset}"
 fi
 
 export EDITOR=nano

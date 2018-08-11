@@ -10,7 +10,7 @@
 [alias]
   cia = !git add -A && git commit
   glog = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr) %Creset' --abbrev-commit --branches
-  l = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr) %Creset' --abbrev-commit --branches
+  l = log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(cyan)%an%Creset' --abbrev-commit
   lg = log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(cyan)%an%Creset' --abbrev-commit
   stat = status
   st = status

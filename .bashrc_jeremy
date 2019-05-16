@@ -17,12 +17,14 @@ if [ $PROD_SERVER ]; then
 fi
 
 export EDITOR=nano
-
-bind "set completion-ignore-case on"
-bind "set show-all-if-ambiguous off"
-bind '"\t":menu-complete'
-bind '"\e[Z": menu-complete-backward'
-#bind 'Escape: unix-line-discard'
+if [[ $- == *i* ]]
+then
+  bind "set completion-ignore-case on"
+  bind "set show-all-if-ambiguous off"
+  bind '"\t":menu-complete'
+  bind '"\e[Z": menu-complete-backward'
+  #bind 'Escape: unix-line-discard'
+fi
 
 alias ls='ls -A --color=auto'
 alias dir=ls

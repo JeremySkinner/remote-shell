@@ -5,7 +5,7 @@
 
 [user]
   name = Jeremy Skinner
-  email = jeremy@jeremyskinner.co.uk
+  email = 90130+JeremySkinner@users.noreply.github.com
 
 [alias]
   cia = !git add -A && git commit
